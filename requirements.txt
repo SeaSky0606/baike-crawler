@@ -1,0 +1,4 @@
+redis
+josn
+urllib2
+bs4
