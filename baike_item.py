@@ -32,7 +32,6 @@ def fetch(url):
 
 
 def do_run(index, page_num=100):
-    artical_list = []
     for pn in range(1, page_num + 1):
         try:
             url = 'http://api.hudong.com/flushjiemi.do?flag=2&topic=%d&page=%d&type=2' % (index, pn)
@@ -40,6 +39,7 @@ def do_run(index, page_num=100):
             print("ret = %s" % retText)
             ret_json = json.loads(retText, encoding='utf-8')
             result = ret_json["result"]
+            artical_list = []
             if len(result) > 0:
                 for ob in result:
                     # artical_list.append(ob["article_topic_name"])
